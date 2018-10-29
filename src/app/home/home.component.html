@@ -1,0 +1,20 @@
+<div style="display: flex;">
+  <div class="container">
+    <div class="row">
+      <h2 style="text-align: center">Movies</h2>
+      <div  cdkDropList #allmovies="cdkDropList" [cdkDropListData]="movies" [cdkDropListConnectedTo]="[towatch]"
+        (cdkDropListDropped)="drop($event)">
+        <app-movie *ngFor="let movie of movies" [movie]="movie" cdkDrag></app-movie>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <h2 style="text-align: center">Movies to watch</h2>
+      <div cdkDropList #towatch="cdkDropList" [cdkDropListData]="moviesToWatch" [cdkDropListConnectedTo]="[allmovies]"
+        (cdkDropListDropped)="drop($event)">
+        <app-movie *ngFor="let movie of moviesToWatch" [movie]="movie" cdkDrag></app-movie>
+      </div>
+    </div>
+  </div>
+</div>

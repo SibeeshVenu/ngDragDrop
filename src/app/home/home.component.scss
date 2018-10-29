@@ -1,0 +1,12 @@
+.container{
+  border: 1px solid rgb(248, 144, 144);
+  margin: 5%;
+  overflow: auto;
+  width: 40%;
+  height: 500px;
+}
+app-movie{
+  cursor: move;
+  width: 50%;
+  display: inline-flex;
+}
