@@ -16,10 +16,11 @@ export class HomeComponent {
     poster_path: '/uC6TTUhPpQCmgldGyYveKRAu8JN.jpg'
   }];
   constructor(private movieService: MovieService) {
-    this.movieService.get(config.api.topRated)
-      .subscribe((data) => {
-        this.formatDta(JSON.parse(data._body).results);
-      });
+    this.getMovies();
+  }
+  private async getMovies() {
+    const movies = await this.movieService.get(config.api.topRated);
+    return this.formatDta(movies.json().results);
   }
   formatDta(_body: Movie[]): void {
     this.movies = _body.filter(movie => movie.poster_path !== '/uC6TTUhPpQCmgldGyYveKRAu8JN.jpg');
