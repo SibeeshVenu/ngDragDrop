@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { RequestMethod, RequestOptions, Request, Http } from '@angular/http';
 import { config } from './config';
-import { Movie } from './models/movie';
 
 @Injectable({
   providedIn: 'root'
